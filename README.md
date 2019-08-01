@@ -28,3 +28,5 @@
     -    go install
     -    EX: pkg\windows_amd64\github.com\sathishkumar64\golang-learn   
 #### Using custom lib,Please refer Printer foder.
+
+#### Package scope always use keyword, like package,var and func. this is the reason we cannot decalre short variable at package scope.
