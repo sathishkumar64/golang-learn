@@ -15,13 +15,25 @@ func main (){
 	}
 */
 	i := 0
-	for   {
+	/*for   {
 		fmt.Println(i)
 		i++
 		if i==5{
 			break
 		}
-	}
+	}*/
 
+	j := 1
+	Loop:
+	 for i < 3{
+		fmt.Println(i)
+		 for j:=1;j <= i ;j++ {
+			 if i * j >=3{
+				 fmt.Println(i,j)
+				 break 
+			 }
+		 } 
+		 i++
+	 }
 }
 
