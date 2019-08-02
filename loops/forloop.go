@@ -14,8 +14,8 @@ func main (){
 		i++
 	}
 */
-	i := 0
-	/*for   {
+	/*i := 0
+	for   {
 		fmt.Println(i)
 		i++
 		if i==5{
@@ -23,17 +23,39 @@ func main (){
 		}
 	}*/
 
-	j := 1
-	Loop:
+
+	/*Loop:
 	 for i < 3{
 		fmt.Println(i)
-		 for j:=1;j <= i ;j++ {
-			 if i * j >=3{
+		 for j:=1;j <= 3 ;j++ {
+			 if i * j >=5{
 				 fmt.Println(i,j)
-				 break 
+				break Loop
 			 }
 		 } 
 		 i++
-	 }
+	 }*/
+
+	 // working with collections :=  it will work sclies ,array & map .
+	//	s:= []int {1,2,3}
+
+	s:= "Hello GO!"   // it will work string
+	for k, v := range s {
+		fmt.Printf(k,string(v) )
+	}
+
+	studentsDetails := make(map[string] int)
+	studentsDetails = map[string] int{
+		"Anbu" : 24,
+		"Babu" : 32,
+		"Chandru" :38,
+	}
+	for _ ,v := range studentsDetails {
+		fmt.Println(v)
+	}
+
+	for k, v := range studentsDetails {
+		fmt.Println(k,v)
+	}
 }
 
