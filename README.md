@@ -30,3 +30,7 @@
 #### Using custom lib,Please refer Printer foder.
 
 #### Package scope always use keyword, like package,var and func. this is the reason we cannot decalre short variable at package scope.
+
+
+##### to debug race
+go run - race hello.go
