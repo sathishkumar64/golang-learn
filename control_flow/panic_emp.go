@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+)
 
 func main (){
 /*
@@ -27,8 +30,9 @@ func panicer(){
 	fmt.Println("About to start")
 
 	defer func(){
-		if err : recover() ;err !=nil{
+		if err := recover() ; err !=nil{
 			log.Println("Error:",err)
+			panic(err)
 		}
 	}()
 	panic("Something went wrong")
