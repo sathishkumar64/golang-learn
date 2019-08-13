@@ -4,15 +4,27 @@ import (
 	"fmt"
 )
 
-type Students interface{
-	StudentCreate() (string,error)
+
+type studentDetail struct {
+	StudentID   int   
+	StudentName string 
+	SchoolName  string 
 }
 
-type studentDetail struct {}
+type Student interface{
+	StudentCreate(studentDetail struct) (studentDetail, error)
+}
 
 
-func (s studentDetail) StudentCreate() (string,error){
-	return "Poda dey neeyum unkodingum" ,nil
+
+
+func (s studentDetail) StudentCreate() (studentDetail,error){
+	student := studentDetail{
+				StudentID:1,
+				StudentName:"Sathish",			
+				SchoolName: "TNAP",	
+			}
+	return student ,nil
 }
 
 func main(){
