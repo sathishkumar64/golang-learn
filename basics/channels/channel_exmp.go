@@ -9,7 +9,7 @@ var wg = sync.WaitGroup{}
 
 func main(){
 
-	ch := make(chan int,50)
+	ch := make(chan int)
 	wg.Add(2)
 
 	go func(ch <- chan int){
@@ -24,9 +24,14 @@ func main(){
 					
 		wg.Done()
 	}(ch)
-	go func(ch chan <- int){	
-		ch <- 42	
-		ch <- 64	
+	go func(ch chan <- int){		
+		for i := 0 ; i < 5 ; i ++{
+			ch <- i	
+			
+		}
+		//ch <- 42	
+	//	ch <- 64	
+		//ch <- 100	
 		close(ch)
 		wg.Done()
 	}(ch)

@@ -1,24 +1,28 @@
 package main
 
 import (
+	
 	"fmt"
 )
 
 
-func setmessage(ch chan string){
-	ch <- "Hey I'm sending messages to you!"
+func setmessage(ch chan string, frmconsole string){
+	for{
+		ch <- frmconsole + " Hey I'm sending messages to you!"
+		//runtime.Gosched
+	}
+	
 }
 
 func getmessage(ch chan string){
 	msg := <- ch
-	fmt.Println(msg)
+	fmt.Println(msg + " received too")
 }
 
 func main(){
 	ch := make(chan string)	
-	go setmessage(ch)
+	go setmessage(ch,"welcome")
 	go getmessage(ch)
-
-	var input string
-	fmt.Scanln(&input)
+	defer fmt.Println("I'm done")
+	
 }
