@@ -4,31 +4,26 @@ import (
 	"fmt"
 )
 
-
 type studentDetail struct {
-	StudentID   int   
-	StudentName string 
-	SchoolName  string 
+	StudentID   int
+	StudentName string
+	SchoolName  string
 }
 
-type Student interface{
-	StudentCreate(studentDetail struct) (studentDetail, error)
+type student interface {
+	StudentCreate() (studentDetail, error)
 }
 
+func (s studentDetail) StudentCreate() (string, error) {
+	return s.StudentName, nil
+}
 
+func main() {
 
-
-func (s studentDetail) StudentCreate() (studentDetail,error){
 	student := studentDetail{
-				StudentID:1,
-				StudentName:"Sathish",			
-				SchoolName: "TNAP",	
-			}
-	return student ,nil
-}
-
-func main(){
-	var student Students
-	student.StudentCreate()
-	fmt.Printf("%v  %T" ,student,student)
+		StudentID:   100,
+		StudentName: "Sathish",
+		SchoolName:  "TNAP",
+	}
+	fmt.Printf("%v ", student.StudentCreate())
 }
