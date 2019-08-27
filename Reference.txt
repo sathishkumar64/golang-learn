@@ -1,3 +1,23 @@
 BestPractics Video
 -------------------
 https://www.youtube.com/watch?v=1rxDzs0zgcE
+
+
+Context API
+---------------
+https://www.youtube.com/watch?v=-_B5uQ4UGi0
+
+
+
+Samples for MicroService
+------------------------
+https://dev.to/napolux/how-to-write-a-microservice-in-go-with-go-kit-a66
+
+
+Reference
+----------
+https://www.oreilly.com/library/view/building-microservices-with/9781786468666/
+
+Comparison
+------------
+https://medium.com/seek-blog/microservices-in-go-2fc1570f6800
