@@ -1,11 +1,12 @@
 package main
+
 import (
-	"fmt"
 	"bufio"
+	"fmt"
 	"os"
 )
 
-func main(){
+func main() {
 
 	scanner := bufio.NewScanner(os.Stdin)
 
@@ -16,5 +17,3 @@ func main(){
 		fmt.Fprintln(os.Stderr, "reading standard input:", err)
 	}
 }
-
-

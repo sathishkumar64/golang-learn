@@ -1,19 +1,19 @@
-package main 
+package main
 
 import "fmt"
 
-func main (){
+func main() {
 
-/*	for i, j :=0,0 ;i<5 ;i,j =i+1,j+1{
-		fmt.Println(i,j)
-	}
+	/*	for i, j :=0,0 ;i<5 ;i,j =i+1,j+1{
+			fmt.Println(i,j)
+		}
 	*/
 	/*i := 0
 	for i < 5  {
 		fmt.Println(i)
 		i++
 	}
-*/
+	*/
 	/*i := 0
 	for   {
 		fmt.Println(i)
@@ -23,7 +23,6 @@ func main (){
 		}
 	}*/
 
-
 	/*Loop:
 	 for i < 3{
 		fmt.Println(i)
@@ -32,30 +31,29 @@ func main (){
 				 fmt.Println(i,j)
 				break Loop
 			 }
-		 } 
+		 }
 		 i++
 	 }*/
 
-	 // working with collections :=  it will work sclies ,array & map .
+	// working with collections :=  it will work sclies ,array & map .
 	//	s:= []int {1,2,3}
 
-	s:= "Hello GO!"   // it will work string
+	s := "Hello GO!" // it will work string
 	for k, v := range s {
-		fmt.Printf(k,string(v) )
+		fmt.Printf(k, string(v))
 	}
 
-	studentsDetails := make(map[string] int)
-	studentsDetails = map[string] int{
-		"Anbu" : 24,
-		"Babu" : 32,
-		"Chandru" :38,
+	studentsDetails := make(map[string]int)
+	studentsDetails = map[string]int{
+		"Anbu":    24,
+		"Babu":    32,
+		"Chandru": 38,
 	}
-	for _ ,v := range studentsDetails {
+	for _, v := range studentsDetails {
 		fmt.Println(v)
 	}
 
 	for k, v := range studentsDetails {
-		fmt.Println(k,v)
+		fmt.Println(k, v)
 	}
 }
-

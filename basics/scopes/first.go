@@ -7,7 +7,6 @@ func main() {
 	learnPackage()
 }
 
-
 /** Cannot declare same name as again. */
 func learnPackage() {
 	fmt.Println("Learning Package stuffs")

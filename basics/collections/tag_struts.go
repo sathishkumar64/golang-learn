@@ -2,19 +2,18 @@ package main
 
 import (
 	"fmt"
-	 "reflect"
+	"reflect"
 )
 
-
-type Animal struct{
-	Name string `required max:"100"`
+type Animal struct {
+	Name   string `required max:"100"`
 	Origin string
 }
 
-func main (){
+func main() {
 
 	t := reflect.TypeOf(Animal{})
 
 	field, _ := t.FieldByName("Name")
-	fmt.Println(field,field.Tag)
+	fmt.Println(field, field.Tag)
 }

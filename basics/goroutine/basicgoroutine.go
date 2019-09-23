@@ -1,13 +1,13 @@
 package main
 
 import "fmt"
-import  "time"
+import "time"
 
-func  main (){
+func main() {
 	go callGo()
 	time.Sleep(100 * time.Millisecond)
 }
 
-func callGo(){
+func callGo() {
 	fmt.Println("Calling Go Routine")
 }

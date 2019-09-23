@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main (){
+func main() {
 
 	/*switch 2 {
 	case 1:
@@ -24,7 +24,6 @@ func main (){
 		fmt.Println("not one | two")
 	}*/
 
-
 	// Multiple test cases with condition
 	/*switch i:= 2+3;i {
 	case 1,5,10:
@@ -36,14 +35,14 @@ func main (){
 	}*/
 
 	// tag less test
-	i:=10
-	switch  {
-	case i<=10:
+	i := 10
+	switch {
+	case i <= 10:
 		fmt.Println("one, five, ten")
-		fallthrough   /// user control for this switch statement
-	case i<=20:
+		fallthrough /// user control for this switch statement
+	case i <= 20:
 		fmt.Println("two,four,six")
-	default :
+	default:
 		fmt.Println("not one | two")
 	}
 }

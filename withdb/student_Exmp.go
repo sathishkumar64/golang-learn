@@ -1,33 +1,33 @@
 package main
 
 import (
-	"go.mongodb.org/mongo-driver/mongo"
-	"time"
-	"github.com/gorilla/mux"
 	"context"
 	"fmt"
-	
+	"github.com/gorilla/mux"
+	"go.mongodb.org/mongo-driver/mongo"
+	"time"
 )
 
 /*Book Object */
-type Book struct{
-	ID string  `json:"id"`
-	Isbn string `json:"isbn"`
-	Title string	`json:"title"`
+type Book struct {
+	ID     string  `json:"id"`
+	Isbn   string  `json:"isbn"`
+	Title  string  `json:"title"`
 	Author *Author `json:"author"`
 }
 
-type Author struct{
+type Author struct {
 	Firstname string `json:"firstname"`
-	Lastname string `json:"lastname"`
+	Lastname  string `json:"lastname"`
 }
+
 var client *mongo.Client
 
-func getBooks(w http.ResponseWriter, r *http.Request){
+func getBooks(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	var books []Book
 	collection := client.Database("golearn").Collection("book")
-	ctx, _ := context.WithTimeout(context.Background(), 30 * time.Second)
+	ctx, _ := context.WithTimeout(context.Background(), 30*time.Second)
 	cursor, err := collection.Find(ctx, bson.M{})
 	if err != nil {
 		response.WriteHeader(http.StatusInternalServerError)
@@ -48,11 +48,11 @@ func getBooks(w http.ResponseWriter, r *http.Request){
 	json.NewEncoder(response).Encode(books)
 }
 
-func main(){
+func main() {
 	fmt.Println("Applicaiton is starting...")
-	ctx,err := context.WithTimeout(context.Background(),10*time.Second)
-	client,err := mongo.Connect(ctx,"mongodb://localhost:27017")
-	r := mux.NewRouter() 
-	r.HandleFunc("/api/books",getBooks).Methods("GET")
+	ctx, err := context.WithTimeout(context.Background(), 10*time.Second)
+	client, err := mongo.Connect(ctx, "mongodb://localhost:27017")
+	r := mux.NewRouter()
+	r.HandleFunc("/api/books", getBooks).Methods("GET")
 	http.ListenAndServe(":8080", r)
 }

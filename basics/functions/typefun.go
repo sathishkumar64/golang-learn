@@ -2,23 +2,22 @@ package main
 
 import "fmt"
 
-func main(){
+func main() {
 
 	g := student{
-		stuName : "Sathish",
-		age : 34,
+		stuName: "Sathish",
+		age:     34,
 	}
 
 	g.callStudent()
 
 }
 
-
-type  student struct {
+type student struct {
 	stuName string
-	age int
+	age     int
 }
 
-func (s student ) callStudent(){
-	fmt.Println(s.stuName,s.age)
+func (s student) callStudent() {
+	fmt.Println(s.stuName, s.age)
 }

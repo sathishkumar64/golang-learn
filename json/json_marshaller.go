@@ -1,11 +1,11 @@
 package main
 
 import (
-	"time"
 	"encoding/json"
 	"fmt"
-	"strings"
 	"log"
+	"strings"
+	"time"
 )
 
 type ShirtSize byte
@@ -25,18 +25,18 @@ const (
 	XL
 )
 
-func main(){
-	
+func main() {
+
 	var p Person
 	dec := json.NewDecoder(strings.NewReader(input))
 
-	if err := dec.Decode(&p); err !=nil {
-		log.Fatalf("parse person %v",err)
+	if err := dec.Decode(&p); err != nil {
+		log.Fatalf("parse person %v", err)
 	}
 	fmt.Println(p)
 }
 
-func ( p *Person) Parse(s string) error{
+func (p *Person) Parse(s string) error {
 
 	return err
 }

@@ -1,8 +1,8 @@
 package main
 
- import "fmt"
+import "fmt"
 
- func main(){
+func main() {
 
 	/*var a int = 64
 	var b *int = &a
@@ -13,9 +13,9 @@ package main
 	*b =65
 	fmt.Println(a,*b)*/
 
-	a := [3] int {1,2,3}
+	a := [3]int{1, 2, 3}
 	b := &a[0]
 	c := &a[1]
-	fmt.Printf("%v,%v,%p \n",a,*b,c)
+	fmt.Printf("%v,%v,%p \n", a, *b, c)
 
 }

@@ -2,13 +2,11 @@ package main
 
 import "fmt"
 
-func main(){
+func main() {
 
 	fmt.Println("User Input is ::::")
 	var input string
-//	fmt.Scan(&input)	
+	//	fmt.Scan(&input)
 	fmt.Scanln(&input)
 
 }
-	
-

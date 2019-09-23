@@ -1,15 +1,12 @@
 package main
 
 import (
-	"runtime"
 	"fmt"
+	"runtime"
 	"sync"
 )
 
-
-
-
-var wg= sync.WaitGroup{}
+var wg = sync.WaitGroup{}
 
 /*func  main(){
 	msg := "Calling Go Routine"
@@ -18,15 +15,15 @@ var wg= sync.WaitGroup{}
 		fmt.Println(msg)
 		wg.Done()
 	}(msg)
-	wg.Wait()	
+	wg.Wait()
 }*/
 
-var counter =0
-func main(){
+var counter = 0
 
-	
-	fmt.Printf("Threads:  %v\n",runtime.GOMAXPROCS(-1))
-	for i:=0 ;i <10;i++{
+func main() {
+
+	fmt.Printf("Threads:  %v\n", runtime.GOMAXPROCS(-1))
+	for i := 0; i < 10; i++ {
 		wg.Add(2)
 		go sayHello()
 		go increment()
@@ -35,13 +32,12 @@ func main(){
 
 }
 
-
-func sayHello(){
- fmt.Printf("Hello %v\n",counter)
- wg.Done()
+func sayHello() {
+	fmt.Printf("Hello %v\n", counter)
+	wg.Done()
 }
 
-func increment(){
- counter++
- wg.Done()
+func increment() {
+	counter++
+	wg.Done()
 }

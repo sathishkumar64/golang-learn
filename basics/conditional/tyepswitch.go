@@ -2,10 +2,10 @@ package main
 
 import "fmt"
 
-func main (){
+func main() {
 
 	//var i interface{} =[3]int {}
-	var i interface{} =1
+	var i interface{} = 1
 
 	switch i.(type) {
 	case int:
@@ -17,8 +17,8 @@ func main (){
 		fmt.Println("hey,you dont want print with you")
 	case string:
 		fmt.Println("i is string")
-	default :
+	default:
 		fmt.Println("not one | two")
 	}
-	
+
 }

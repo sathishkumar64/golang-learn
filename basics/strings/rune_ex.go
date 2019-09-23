@@ -2,11 +2,8 @@ package main
 
 import "fmt"
 
-func main (){
-	var r rune ='a'
+func main() {
+	var r rune = 'a'
 
-	fmt.Printf("%v,%T",r,r)
+	fmt.Printf("%v,%T", r, r)
 }
-
-
-

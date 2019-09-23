@@ -5,17 +5,16 @@ import (
 	"strconv"
 )
 
-func main(){
+func main() {
 
 	var age int
-	age =32
+	age = 32
 
-	fmt.Printf("%v, %T",age,age)
-
+	fmt.Printf("%v, %T", age, age)
 
 	var agenew string
 
-	agenew =strconv.Itoa(age)
+	agenew = strconv.Itoa(age)
 
-	fmt.Printf("%v, %T",agenew,agenew)
+	fmt.Printf("%v, %T", agenew, agenew)
 }
